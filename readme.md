@@ -65,7 +65,8 @@ ch.wgs.toLv95.GeoJSON(feature, true)
 //  type: 'Point',
 //  coordinates: [ 2600000, 1200000 ] 
 // },
-// crs: type: 'name',
+// crs: {
+//  type: 'name',
 //  properties: { name: 'urn:ogc:def:crs:EPSG::2056' } 
 // } 
 //}

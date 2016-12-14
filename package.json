@@ -11,5 +11,12 @@
   "license": "GPLv2",
   "dependencies": {
     "proj4": "^2.3.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idris-maps/swiss-projection.git"
+  },
+  "bugs": {
+    "url": "https://github.com/idris-maps/swiss-projection/issues"
   }
 }
