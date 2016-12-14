@@ -32,7 +32,7 @@ ch.<input-projection>.to<output-projection>.point([<x>,<y>], <round>)
 ch.<input-projection>.to<output-projection>.GeoJSON(<geojson-object>, <round>)
 ```
 
-```<round>``` is a boolean (defaults to ```false```). If ```true```, the result will be rounded to closest interger for results in LV03 or LV95 and to 0.000001 in WGS.
+```<round>``` is a boolean (defaults to ```false```). If ```true```, the result will be rounded to closest integer for results in LV03 or LV95 and to 0.000001 in WGS.
 
 ### Example 1: LV03 point to WGS84
 
