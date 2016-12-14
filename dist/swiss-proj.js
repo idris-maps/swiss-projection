@@ -74,7 +74,7 @@ module.exports = function(geo, rnd, conv, n) {
 		} else if(geo.type === 'Feature') {
 			var feature = feat(geo, rnd, conv)
 			addCrs(feature, n)
-			return 
+			return feature
 		} else {
 			console.log(notValid)
 		}
