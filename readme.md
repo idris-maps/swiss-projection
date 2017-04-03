@@ -2,6 +2,8 @@
 
 Convert points and GeoJSON objects between LV03(EPSG:21781), LV95(EPSG:2056) and WGS84(EPSG:4326).
 
+For a lightweight version without dependencies, check out [swiss-projection-light](https://www.npmjs.com/package/swiss-projection-light).
+
 ## Install
 
 ### NPM
