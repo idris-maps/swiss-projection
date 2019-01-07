@@ -6,6 +6,11 @@ export type CoordPolygon = CoordLine[]
 
 export type CoordMultiPolygon = CoordPolygon[]
 
+export type Coordinates = CoordPoint
+  | CoordLine
+  | CoordPolygon
+  | CoordMultiPolygon
+
 export interface GeometryPoint {
   type: 'Point'
   coordinates: CoordPoint
@@ -42,4 +47,20 @@ export type Geometry = GeometryPoint
   | GeometryPolygon
   | GeometryMultiLine
   | GeometryMultiPolygon
-  
+
+export interface Feature {
+  type: 'Feature'
+  geometry: Geometry
+  [key: string]: any
+}
+
+export interface Collection {
+  type: 'FeatureCollection'
+  features: Feature[]
+}
+
+export type GeoJson = Feature | Collection
+
+export type ToConvert = GeoJson
+  | Geometry
+  | Coordinates

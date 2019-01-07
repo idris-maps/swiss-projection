@@ -16,22 +16,22 @@ import {
 } from './types'
 
 const isPointGeometry = (geom: Geometry): geom is GeometryPoint =>
-  geom.type === 'Point'
+  geom.type && geom.type === 'Point'
 
 const isLineGeometry = (geom: Geometry): geom is GeometryLine =>
-  geom.type === 'LineString'
+  geom.type && geom.type === 'LineString'
 
 const isPolygonGeometry = (geom: Geometry): geom is GeometryPolygon =>
-  geom.type === 'Polygon'
+  geom.type && geom.type === 'Polygon'
 
 const isMultiPointGeometry = (geom: Geometry): geom is GeometryMultiPoint =>
-  geom.type === 'MultiPoint'
+  geom.type && geom.type === 'MultiPoint'
 
 const isMultiLineGeometry = (geom: Geometry): geom is GeometryMultiLine =>
-  geom.type === 'MultiLineString'
+  geom.type && geom.type === 'MultiLineString'
 
 const isMultiPolygonGeometry = (geom: Geometry): geom is GeometryMultiPolygon =>
-  geom.type === 'MultiPolygon'
+  geom.type && geom.type === 'MultiPolygon'
 
 export default (converter: Function) =>
   (geom: Geometry): Geometry => {
