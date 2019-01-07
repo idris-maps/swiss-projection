@@ -63,4 +63,3 @@ export type GeoJson = Feature | Collection
 
 export type ToConvert = GeoJson
   | Geometry
-  | Coordinates
