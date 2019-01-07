@@ -1,3 +1,4 @@
+import { CoordPoint } from './types'
 // https://www.swisstopo.admin.ch/content/swisstopo-internet/en/online/calculation-services/_jcr_content/contentPar/tabs/items/documents_publicatio/tabPar/downloadlist/downloadItems/19_1467104393233.download/ch1903wgs84_e.pdf
 
 // Convert the ellipsoidal latitudes φ and longitudes λ into arcseconds ["]
@@ -43,7 +44,7 @@ const getY = (phi2: number, lambda2: number): number =>
 const getX = (phi2: number, lambda2: number): number =>
   getNorthing(phi2, lambda2) - 1000000
 
-export const toLV95 = ([longitude, latitude]: [number, number]): [number, number] => {
+export const toLV95 = ([longitude, latitude]: CoordPoint): CoordPoint => {
   const phi2 = getPhi2(getPhi(latitude))
   const lambda2 = getLambda2(getLambda(longitude))
   return [
@@ -52,7 +53,7 @@ export const toLV95 = ([longitude, latitude]: [number, number]): [number, number
   ]
 }
 
-export const toLV03 = ([longitude, latitude]: [number, number]): [number, number] => {
+export const toLV03 = ([longitude, latitude]: CoordPoint): CoordPoint => {
   const phi2 = getPhi2(getPhi(latitude))
   const lambda2 = getLambda2(getLambda(longitude))
   return [
