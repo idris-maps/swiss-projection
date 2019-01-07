@@ -11,8 +11,8 @@ test('toLV03', t => {
 })
 
 test('toLV95', t => {
-  const [y, x] = toLV95(lngLat)
-  t.same(y, 2600000)
-  t.same(x, 1200000)
+  const [E, N] = toLV95(lngLat)
+  t.same(E, 2600000)
+  t.same(N, 1200000)
   t.end()
 })
