@@ -1,6 +1,6 @@
 import test from 'tape'
-import convert from '../src/convert'
-import { fromLV95 } from '../src/fromCH'
+import convert from '../convert'
+import { fromLV95 } from '../fromCH'
 import * as data from './data'
 
 const convertFromLV95 = convert<any>(fromLV95)

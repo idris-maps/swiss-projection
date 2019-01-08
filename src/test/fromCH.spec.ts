@@ -1,5 +1,5 @@
 import test from 'tape'
-import { fromLV03, fromLV95 } from '../src/fromCH'
+import { fromLV03, fromLV95 } from '../fromCH'
 
 const lng = 7.438633
 const lat = 46.951082
