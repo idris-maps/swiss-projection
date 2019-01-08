@@ -1,4 +1,4 @@
-import { default as test } from 'tape'
+import test from 'tape'
 import { toLV03, toLV95 } from '../src/toCH'
 
 const lngLat: [number, number] = [ 7.438633, 46.951082 ]

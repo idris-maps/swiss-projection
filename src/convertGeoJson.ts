@@ -1,15 +1,15 @@
 import convertGeometry from './convertGeometry'
 
 import {
-  Collection,
-  GeoJson,
+  FeatureCollection,
+  GeoJSON,
   Feature,
-} from './types'
+} from './geojson.d'
 
-const isFeature = (o: GeoJson): o is Feature =>
+const isFeature = (o: GeoJSON): o is Feature =>
   o.type && o.type === 'Feature'
 
-const isCollection = (o: GeoJson): o is Collection =>
+const isCollection = (o: GeoJSON): o is FeatureCollection =>
   o.type && o.type === 'FeatureCollection'
 
 const convertFeature = (converter: Function) =>
@@ -18,7 +18,7 @@ const convertFeature = (converter: Function) =>
     geometry: convertGeometry(converter)(feature.geometry)
   })
 
-export default (converter: Function) => (geojson: GeoJson): GeoJson => {
+export default (converter: Function) => (geojson: GeoJSON): GeoJSON => {
   if (isFeature(geojson)) {
     return convertFeature(converter)(geojson)
   }

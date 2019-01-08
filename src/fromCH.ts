@@ -1,5 +1,3 @@
-import { CoordPoint } from './types'
-
 // https://www.swisstopo.admin.ch/content/swisstopo-internet/en/online/calculation-services/_jcr_content/contentPar/tabs/items/documents_publicatio/tabPar/downloadlist/downloadItems/19_1467104393233.download/ch1903wgs84_e.pdf
 
 // Convert the projection coordinates E (easting) and N (northing) in LV95 into the civilian system (Bern = 0 / 0) and express in the unit [1000 km]
@@ -35,7 +33,7 @@ const toDegrees = (n: number): number => n * 100 / 36
 
 const round = (n: number): number => Math.round(n * 1000000) / 1000000
 
-export const fromLV03 = ([y, x]: CoordPoint): CoordPoint => {
+export const fromLV03 = ([y, x]: number[]): number[] => {
   const y2 = getY2FromY(y)
   const x2 = getX2FromX(x)
   return [
@@ -44,7 +42,7 @@ export const fromLV03 = ([y, x]: CoordPoint): CoordPoint => {
   ]
 }
 
-export const fromLV95 = ([E, N]: CoordPoint): CoordPoint => {
+export const fromLV95 = ([E, N]: number[]): number[] => {
   const y2 = getY2FromE(E)
   const x2 = getX2FromN(N)
   return [

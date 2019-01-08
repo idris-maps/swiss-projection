@@ -1,4 +1,4 @@
-import { default as test } from 'tape'
+import test from 'tape'
 import { fromLV03, fromLV95 } from '../src/fromCH'
 
 const lng = 7.438633
