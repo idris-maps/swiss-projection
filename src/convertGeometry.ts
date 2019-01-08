@@ -7,33 +7,37 @@ import {
 
 import {
   Geometry,
-  GeometryLine,
-  GeometryMultiLine,
-  GeometryMultiPoint,
-  GeometryMultiPolygon,
-  GeometryPoint,
-  GeometryPolygon,
-} from './types'
+  GeometryCollection,
+  Point,
+  LineString,
+  Polygon,
+  MultiLineString,
+  MultiPoint,
+  MultiPolygon,
+} from './geojson'
 
-const isPointGeometry = (geom: Geometry): geom is GeometryPoint =>
+const isGeometryCollection = (geom: Geometry | GeometryCollection): geom is GeometryCollection =>
+  geom.type && geom.type === 'GeometryCollection'
+
+const isPointGeometry = (geom: Geometry | GeometryCollection): geom is Point =>
   geom.type && geom.type === 'Point'
 
-const isLineGeometry = (geom: Geometry): geom is GeometryLine =>
+const isLineGeometry = (geom: Geometry | GeometryCollection): geom is LineString =>
   geom.type && geom.type === 'LineString'
 
-const isPolygonGeometry = (geom: Geometry): geom is GeometryPolygon =>
+const isPolygonGeometry = (geom: Geometry | GeometryCollection): geom is Polygon =>
   geom.type && geom.type === 'Polygon'
 
-const isMultiPointGeometry = (geom: Geometry): geom is GeometryMultiPoint =>
+const isMultiPointGeometry = (geom: Geometry | GeometryCollection): geom is MultiPoint =>
   geom.type && geom.type === 'MultiPoint'
 
-const isMultiLineGeometry = (geom: Geometry): geom is GeometryMultiLine =>
+const isMultiLineGeometry = (geom: Geometry | GeometryCollection): geom is MultiLineString =>
   geom.type && geom.type === 'MultiLineString'
 
-const isMultiPolygonGeometry = (geom: Geometry): geom is GeometryMultiPolygon =>
+const isMultiPolygonGeometry = (geom: Geometry | GeometryCollection): geom is MultiPolygon =>
   geom.type && geom.type === 'MultiPolygon'
 
-export default (converter: Function) =>
+const convertGeometry = (converter: Function) =>
   (geom: Geometry): Geometry => {
     if (isPointGeometry(geom)) {
       return {
@@ -72,4 +76,12 @@ export default (converter: Function) =>
       }
     }
     return geom
+  }
+
+export default (converter: Function) =>
+  (geom: Geometry | GeometryCollection): Geometry | GeometryCollection => {
+    if (isGeometryCollection(geom)) {
+      return { ...geom, geometries: geom.geometries.map(convertGeometry(converter)) }
+    }
+    return convertGeometry(converter)(geom)
   }
