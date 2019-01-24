@@ -6,7 +6,6 @@ import {
   FeatureCollection,
   Geometry,
   GeometryCollection,
-  GeoJSON,
 } from './geojson'
 
 const isGeoJson = (o: any): o is Feature | FeatureCollection =>
