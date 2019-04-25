@@ -58,3 +58,15 @@ test('convert point geometry', t => {
   t.true(isWgsPoint(res.coordinates), 'should return a wgs point')
   t.end()
 })
+
+test('convert point coordinates', t => {
+  const res = convertFromLV95(data.pointGeometry.coordinates)
+  t.true(isWgsPoint(res), 'should return a wgs point')
+  t.end()
+})
+
+test('convert polygon coordinates', t => {
+  const res = convertFromLV95(data.polygonGeometry.coordinates)
+  t.true(isWgsPolygon(res), 'should return a wgs point')
+  t.end()
+})

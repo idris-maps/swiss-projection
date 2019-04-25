@@ -1,5 +1,6 @@
 import convertGeoJson from './convertGeoJson'
 import convertGeometry from './convertGeometry'
+import convertCoordinates from './convertCoordinates'
 
 import {
   Feature,
@@ -7,6 +8,9 @@ import {
   Geometry,
   GeometryCollection,
 } from './geojson'
+import {
+  isCoords
+} from './convertCoordinates'
 
 const isGeoJson = (o: any): o is Feature | FeatureCollection =>
   o.type && (o.type === 'Feature' || o.type === 'FeatureCollection')
@@ -31,6 +35,10 @@ export default <T>(converter: Function) =>
     if (isGeometry(toConvert)) {
       // @ts-ignore
       return convertGeometry(converter)(toConvert)
+    }
+    if (isCoords(toConvert)) {
+      // @ts-ignore
+      return convertCoordinates(converter)(toConvert)
     }
     return toConvert
   }

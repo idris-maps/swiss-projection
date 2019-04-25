@@ -2,7 +2,7 @@ import {
   Feature
 } from '../geojson'
 
-export const baselPolygonFeature: Feature = {
+export const baselPolygonFeature = {
   "type": "Feature",
   "properties": {
     "KTNR": 12,
