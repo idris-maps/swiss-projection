@@ -15,7 +15,7 @@ const isWgsLine = (line: number[][]): boolean =>
 const isWgsPolygon = (polygon: number[][][]): boolean =>
   !polygon.map(isWgsLine).includes(false)
 
-test('covert featureCollection', t => {
+test('convert featureCollection', t => {
   const res = convertFromLV95(data.collection)
   t.same(res.type, 'FeatureCollection', 'should return collection')
   t.same(res.features.length, data.collection.features.length, 'should return same number of features')

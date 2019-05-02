@@ -1,7 +1,3 @@
-import {
-  Feature
-} from '../geojson'
-
 export const baselPolygonFeature = {
   "type": "Feature",
   "properties": {
