@@ -1,6 +1,6 @@
 {
   "name": "swiss-projection",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -20,16 +20,15 @@
   "author": "idris-maps",
   "license": "GPLv2",
   "devDependencies": {
+    "@types/geojson": "^7946.0.4",
+    "@types/tape": "^4.2.33",
+    "save-dev": "^2.0.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.2",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.2"
   },
-  "dependencies": {
-    "@types/geojson": "^7946.0.4",
-    "@types/tape": "^4.2.33",
-    "save-dev": "^2.0.0"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/idris-maps/swiss-projection.git"
