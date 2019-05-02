@@ -17,8 +17,8 @@
     "WGS84",
     "geojson"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "idris-maps",
+  "license": "GPLv2",
   "devDependencies": {
     "tap-spec": "^5.0.0",
     "tape": "^4.9.2",
@@ -29,5 +29,12 @@
     "@types/geojson": "^7946.0.4",
     "@types/tape": "^4.2.33",
     "save-dev": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idris-maps/swiss-projection.git"
+  },
+  "bugs": {
+    "url": "https://github.com/idris-maps/swiss-projection/issues"
   }
 }
