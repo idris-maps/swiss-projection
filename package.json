@@ -7,7 +7,16 @@
     "build": "tsc",
     "test": "ts-node node_modules/tape/bin/tape src/test/*.spec.ts | tap-spec"
   },
-  "keywords": [],
+  "keywords": [
+    "projection",
+    "LV95",
+    "LV03",
+    "WGS85",
+    "EPSG:21781",
+    "EPSG:2056",
+    "WGS84",
+    "geojson"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
