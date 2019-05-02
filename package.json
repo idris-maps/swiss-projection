@@ -2,7 +2,7 @@
   "name": "swiss-projection-light-2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "ts-node node_modules/tape/bin/tape src/test/*.spec.ts | tap-spec"
