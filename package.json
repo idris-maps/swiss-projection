@@ -1,13 +1,13 @@
 {
   "name": "swiss-projection",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "",
   "main": "dist/index.js",
   "bin": {
-    "lv03ToWgs": "./bin/lv03ToWgs",
-    "lv95ToWgs": "./bin/lv95ToWgs",
-    "wgsToLv03": "./bin/wgsToLv03",
-    "wgsToLv95": "./bin/wgsToLv95"
+    "lv03ToWgs": "./bin/lv03ToWgs.js",
+    "lv95ToWgs": "./bin/lv95ToWgs.js",
+    "wgsToLv03": "./bin/wgsToLv03.js",
+    "wgsToLv95": "./bin/wgsToLv95.js"
   },
   "scripts": {
     "build": "tsc",
